@@ -1,12 +1,14 @@
 {
   "name": "electron-updater-example",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "Matt Haggard",
   "scripts": {
     "start": "electron .",
-    "publish": "electron-builder -p always"
+    "publish": "electron-builder -p always",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
   },
   "devDependencies": {
     "electron": "^14.0.1",
@@ -17,22 +19,6 @@
   "dependencies": {
     "electron-log": "^4.4.1",
     "electron-updater": "^4.3.9"
-  },
-  "build": {
-    "appId": "com.github.ra86fh.updatejemplo",
-    "afterSign": "./build/notarize.js",
-    "mac": {
-      "category": "your.app.category.type"
-    },
-    "win": {
-      "target": "nsis"
-    },
-    "nsis": {
-      "oneClick": false
-    },
-    "linux": {
-      "category": "your.app.category.type",
-      "target": "AppImage"
-    }
   }
+ 
 }
